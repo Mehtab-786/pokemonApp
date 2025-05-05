@@ -35,8 +35,8 @@ export default function App() {
 
   function filter() {
       let filtered = allPokemon.filter((value) => {
-        let nameMatch = value.name.toLowerCase().includes(search.toLowerCase())
-        let typeMatch = selected === 'All' || value.types.includes(selected.toLowerCase());
+        let nameMatch = value.name.toLowerCase().includes(search.toLowerCase().trim())
+        let typeMatch = selected === 'All' || value.types.includes(selected.toLowerCase().trim());
 
         return nameMatch && typeMatch
       })
